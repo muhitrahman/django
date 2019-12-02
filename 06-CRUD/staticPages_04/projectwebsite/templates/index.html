@@ -1,0 +1,20 @@
+
+
+{%extends 'main.html'%}
+
+{%block content%}
+{%for A in object_list%}
+
+<div class="article">
+    <h3><a href="{% url 'page_detail' A.pk %}">{{A.title}}</a></h3>
+    <p>{{A.text}}</p>
+</div>
+
+{%endfor%}
+{%endblock content%}
+
+
+
+
+
+

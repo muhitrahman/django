@@ -1,0 +1,38 @@
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <link rel="stylesheet" href="{% static 'css/basestyles.css' %}">
+
+  <title>Muhit's Articles can be found here</title>
+</head>
+<body>
+ 
+  <header>
+    <h1><a href="/">My personal blog</a></h1>
+  </header>
+
+    <div class="container">
+
+      {% if user.is_authenticated %}
+      <p>you are logged in</p>
+      <p>hithere: {{user.username}}, howdy</p>
+      <a href="{% url 'logout' %}">logout</a>
+      
+      {% else %}
+      <p>you are not logged in</p>
+      <p>please <a href="{% url 'login' %}"> login</a> here</p>
+      
+      {% endif %}
+      {% block content %}
+      {% endblock content %}
+
+
+    </div>
+
+
+</body>

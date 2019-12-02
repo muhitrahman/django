@@ -1,0 +1,18 @@
+
+
+{%extends 'main.html'%}
+
+{%block content%}
+
+<h1>Enter your article here</h1>
+<form action="" method="post">
+
+    {%csrf_token%}
+
+    {{form.as_p}}
+
+    <input type="submit" value="save">
+
+</form>
+
+{%endblock content%}
